@@ -26,7 +26,8 @@
           "some": ["nesting", "id"]
         }
       }
-    ]
+    ],
+    "consistent-return": "off"
   },
   "ignorePatterns": [
     "dist/",
