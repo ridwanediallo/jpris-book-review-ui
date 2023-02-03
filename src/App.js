@@ -1,12 +1,13 @@
 import { Routes, Route } from 'react-router-dom';
 
 import HomePage from './components/HomePage';
-import Signup from './components/features/authentication/Signup';
+import { Signin, Signup } from './components/features/authentication';
+import Navigation from './components/Navigation';
 
 function App() {
   return (
     <div>
-      <h1 className="text-3xl font-bold underline">Book review</h1>
+      <Navigation />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/register" element={<Signup />} />

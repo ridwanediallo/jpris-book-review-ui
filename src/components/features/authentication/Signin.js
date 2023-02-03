@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { LockClosedIcon } from '@heroicons/react/20/solid';
 
 const Signin = () => {
   const [email, setEmail] = useState('');
@@ -21,7 +22,7 @@ const Signin = () => {
   };
 
   return (
-    <section className="flex items-center justify-center min-h-screen py-12 px-4 sm:px-6 lg:px-8">
+    <section className="flex items-center justify-center min-h-screen -mt-20 px-4 sm:px-6 lg:px-8">
       <div className="w-full max-w-[320px] space-y-8">
         <div>
           <img
@@ -30,7 +31,7 @@ const Signin = () => {
             alt="Your Company"
           />
           <h1 className="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">
-            JPris - Sign In
+            JPris - SignIn
           </h1>
         </div>
 
@@ -75,18 +76,35 @@ const Signin = () => {
               disabled={disabled}
               className="group relative flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
             >
-              {
-                disabled ? (
-                  <svg className="animate-spin h-5 w-5 mr-3 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
-                  </svg>
-                ) : (
-                  <span className="absolute inset-y-0 left-0 flex items-center pl-3">
-                    <LockClosedIcon className="h-5 w-5 text-indigo-500 group-hover:text-indigo-400" aria-hidden="true" />
-                  </span>
-                )
-              }
+              {disabled ? (
+                <svg
+                  className="animate-spin h-5 w-5 mr-3 text-white"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <circle
+                    className="opacity-25"
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    strokeWidth="4"
+                  />
+                  <path
+                    className="opacity-75"
+                    fill="currentColor"
+                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                  />
+                </svg>
+              ) : (
+                <span className="absolute inset-y-0 left-0 flex items-center pl-3">
+                  <LockClosedIcon
+                    className="h-5 w-5 text-indigo-500 group-hover:text-indigo-400"
+                    aria-hidden="true"
+                  />
+                </span>
+              )}
               {disabled ? 'Processing...' : 'Signin'}
             </button>
           </div>

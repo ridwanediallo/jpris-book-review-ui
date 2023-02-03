@@ -9,7 +9,9 @@ const Signup = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    console.log({ email, name, password, confirmPassword });
+    console.log({
+      email, name, password, confirmPassword,
+    });
     setEmail('');
     setName('');
     setPassword('');
@@ -18,14 +20,28 @@ const Signup = () => {
 
   return (
     <form className="text-gray-600 body-font" onSubmit={handleSubmit}>
-      <div className="container px-5 py-24 mx-auto flex flex-wrap items-center">
+      <div className="container px-5 py-24 mx-auto flex flex-wrap">
         <div className="lg:w-3/5 md:w-1/2 md:pr-16 lg:pr-0 pr-0">
-          <h1 className="title-font font-medium text-3xl text-gray-900">
-            Slow-carb next level shoindcgoitch ethical authentic, poko scenester
-          </h1>
+          <div className="mb-20">
+            <img
+              className="mx-auto h-12 w-auto"
+              src="https://tailwindui.com/img/logos/mark.svg?color=green&shade=400"
+              alt="Your Company"
+            />
+            <h1 className="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">
+              JPris - SignUp
+            </h1>
+          </div>
+          <h2 className="title-font font-medium text-3xl text-gray-900">
+            Book Review
+          </h2>
           <p className="leading-relaxed mt-4">
-            Poke slow-carb mixtape knausgaard, typewriter street art gentrify
-            hammock starladder roathse. Craies vegan tousled etsy austin.
+            Is a book-tracking application built using Spring Boot and
+            PostgreSQL. The app is similar to Goodreads and allows users to keep
+            track of books they have read, are currently reading, and want to
+            read in the future. Users can also rate and review books, create and
+            join book clubs, and discover new books to read through personalized
+            recommendations.
           </p>
         </div>
         <div className="lg:w-2/6 md:w-1/2 bg-gray-100 rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0">
@@ -33,10 +49,7 @@ const Signup = () => {
             Sign Up
           </h2>
           <div className="relative mb-4">
-            <label
-              htmlFor="name"
-              className="leading-7 text-sm text-gray-600"
-            >
+            <label htmlFor="name" className="leading-7 text-sm text-gray-600">
               Full Name
             </label>
             <input
@@ -97,9 +110,6 @@ const Signup = () => {
           >
             Button
           </button>
-          <p className="text-xs text-gray-500 mt-3">
-            Literally you probably haven't heard of them jean shorts.
-          </p>
         </div>
       </div>
     </form>
