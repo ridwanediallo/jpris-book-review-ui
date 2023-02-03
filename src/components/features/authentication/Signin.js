@@ -1,10 +1,14 @@
 import { useState } from 'react';
 import { LockClosedIcon } from '@heroicons/react/20/solid';
 
+import { useSession } from '../../../contexts/session';
+import Authenticator from '../../../apis/authenticator';
+
 const Signin = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [disabled, setDisabled] = useState(false);
+  const { login } = useSession();
 
   const onEmailChange = ({ target }) => {
     const { value } = target;
@@ -17,8 +21,12 @@ const Signin = () => {
     event.preventDefault();
     setDisabled(true);
 
-    const user = { email, password };
-    alert(user);
+    Authenticator.signin({ email, password })
+      .then((user) => {
+        login(user);
+      }).catch(() => {
+        setDisabled(false);
+      });
   };
 
   return (

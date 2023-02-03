@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import Authenticator from '../../../apis/authenticator';
+
 const Signup = () => {
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
@@ -9,13 +11,12 @@ const Signup = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    console.log({
-      email, name, password, confirmPassword,
-    });
-    setEmail('');
-    setName('');
-    setPassword('');
-    setConfirmPassword('');
+    Authenticator.register({ email, name, password })
+      .then(() => {
+        // redirect to signin page
+      }).catch(() => {
+        // display error message
+      });
   };
 
   return (
